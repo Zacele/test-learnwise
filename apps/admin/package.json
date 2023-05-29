@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "next": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",

@@ -9,7 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "next": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tanstack/react-query": "*",
+    "clsx": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
