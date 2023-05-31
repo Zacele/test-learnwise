@@ -1,6 +1,7 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ['ui'],
+  transpilePackages: ['utils', 'ui'],
   images: {
     domains: ['images.unsplash.com'],
   },

@@ -1,0 +1,26 @@
+{
+  "data": {
+    "jokes": [
+      {
+        "id": "f2b0a0a0-0a0a-0a0a-0a0a-245224AAA",
+        "sender": "API",
+        "message": "Why did the tomato turn red? Because it saw the salad dressing!"
+      },
+      {
+        "id": "f2b0a0a0-3351-0a0a-0a0a-2452424AAA",
+        "sender": "API",
+        "message": "Why don't scientists trust atoms? Because they make up everything!"
+      },
+      {
+        "id": "f2b0a0a0-3351-2515-0a0a-0a0d0a0SFASFASFsc0c0b",
+        "sender": "API",
+        "message": "Why did the scarecrow win an award? Because he was outstanding in his field!"
+      },
+      {
+        "id": "f2b0a0a0-3351-5663-0a0a-ASFSFSF",
+        "sender": "API",
+        "message": "Why did the math book look so sad? Because it had too many problems!"
+      }
+    ]
+  }
+}
