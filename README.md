@@ -43,4 +43,4 @@ This Turborepo has some additional tools already setup for you:
 
 ### Approach for this project
 
-Due to the time constraint (5 horus) and also not a subjective of the test, I don't have enough time to implement and build a fully operate server with websocket and also an authentication system. All the chat will be gone after the user refresh the page. By using the `tanstack-query` I can mimic the way a chat app should work, by appending the message into the existing chat.
+Due to the time constraint (5 hours) and also not a subjective of the test, I don't have enough time to implement and build a fully operate server with websocket and also an authentication system. All the chat will be gone after the user refresh the page. By using the `tanstack-query` I can mimic the way a chat app should work, by appending the message into the existing chat.
