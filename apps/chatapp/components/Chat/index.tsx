@@ -3,12 +3,13 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { getChatData } from '../../utils/apis';
-import UserChatBubble from '../userChatBubble';
+import ChatBubble from '../ChatBubble';
 
 const Chat = () => {
   const { data: chatData, isLoading } = useQuery({
     queryKey: ['chatData'],
     queryFn: getChatData,
+    staleTime: Infinity,
   });
 
   if (isLoading) return <div>Loading chat...</div>;
@@ -20,10 +21,11 @@ const Chat = () => {
     >
       {chatData.data.conversation.map((message) => {
         return (
-          <UserChatBubble
+          <ChatBubble
             key={message.id}
             message={message.message}
-            isMine={message.sender === 'User'}
+            isUser={message.sender === 'User'}
+            state={message.state}
           />
         );
       })}

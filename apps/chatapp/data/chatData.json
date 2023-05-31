@@ -5,12 +5,14 @@
     "conversation": [
       {
         "id": "f2b0a0a0-0a0a-0a0a-0a0a-0a0d0a0c0c0b",
-        "sender": "API",
+        "sender": "AI",
+        "state": "done",
         "message": "I'm Jamie, your virtual teaching assistant!"
       },
       {
         "id": "f2b0a0a0-3351-0a0a-0a0a-0a0d0a0c0c0b",
-        "sender": "API",
+        "sender": "AI",
+        "state": "done",
         "message": "I can help you answer any questions you have about the course."
       },
       {
@@ -20,7 +22,8 @@
       },
       {
         "id": "f2b0a0a0-3351-5663-0a0a-0a0d0a0c0c0b",
-        "sender": "API",
+        "sender": "AI",
+        "state": "done",
         "message": "What would you like to know?"
       }
     ]

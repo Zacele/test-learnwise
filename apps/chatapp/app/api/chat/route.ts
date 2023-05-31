@@ -13,6 +13,9 @@ export async function GET() {
 export async function POST(request: Request) {
   await delay(3000);
   return NextResponse.json({
-    data: answerData.data.jokes[Math.floor(Math.random() * 4)],
+    data: {
+      ...answerData.data.jokes[Math.floor(Math.random() * 4)],
+      id: Math.floor(Math.random() * 1000),
+    },
   });
 }

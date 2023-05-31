@@ -8,30 +8,60 @@ type Inputs = {
 };
 
 const ChatInput = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
+  const { register, handleSubmit, watch, reset } = useForm<Inputs>();
+  const [latestChatMessage, setLatestChatMessage] = React.useState<string>('');
 
   const queryClient = useQueryClient();
-  const {
-    data,
-    mutate: submitChat,
-    isLoading,
-  } = useMutation({
+  const { mutate: submitChat, isLoading } = useMutation({
     mutationFn: async () => {
       return await fetch('/api/chat', {
         method: 'POST',
-        body: JSON.stringify({ message: watch('chatMessage') }),
+        body: JSON.stringify({ message: latestChatMessage }),
       }).then((data) => data.json());
     },
-    // onMutate: async (newChat) => {
-    onSuccess: (data) => console.log('data: ', data),
+    onMutate: async () => {
+      await queryClient.cancelQueries(['chatData']);
+      queryClient.setQueryData(['chatData'], (oldChat: any) => {
+        return {
+          data: {
+            ...oldChat.data,
+            conversation: [
+              ...oldChat.data.conversation,
+              {
+                id: Math.random(),
+                message: latestChatMessage,
+                sender: 'User',
+              },
+              {
+                id: Math.random(),
+                state: 'pending',
+                message: '',
+                sender: 'AI',
+              },
+            ],
+          },
+        };
+      });
+      reset();
+    },
+    onSuccess: async (data) => {
+      await queryClient.cancelQueries(['chatData']);
+      queryClient.setQueryData(['chatData'], (oldChat: any) => {
+        oldChat.data.conversation.pop();
+        return {
+          data: {
+            ...oldChat.data,
+            conversation: [...oldChat.data.conversation, data.data],
+          },
+        };
+      });
+    },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = () => submitChat();
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    setLatestChatMessage(watch('chatMessage'));
+    submitChat();
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
