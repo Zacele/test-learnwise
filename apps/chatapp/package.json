@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "ui": "workspace:*",
-    "next": "*",
+    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query-devtools": "^4.29.12",
+    "clsx": "^1.2.1",
+    "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@tanstack/react-query": "*",
-    "clsx": "*",
-    "react-hook-form": "*",
+    "react-hook-form": "^7.44.2",
     "utils": "workspace:*"
   },
   "devDependencies": {
